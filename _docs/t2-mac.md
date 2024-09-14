@@ -100,7 +100,10 @@ In a terminal, you'll install several packages and enable some daemons needed to
 3. After a reboot, ensure t2fanrd is running with ```systemctl status t2fanrd```. Fan speed curves can be managed by editing ```/etc/t2fanrd.conf```. See [T2FanRD](https://github.com/GnomedDev/T2FanRD) for details. 
 
 4. Enable T2-appropriate kernel arguments.
-In a terminal, run: ```rpm-ostree kargs --append-if-missing=intel_iommu=on --append-if-missing=iommu=pt --append-if-missing=mem_sleep_default=s2idle``` and reboot when prompted.
+
+To enable native PCIe suppport, Intel IOMMU, and apply one of the fixes for what happens with buggy apple firmware if your system tries to deep sleep, we'll use rpm-ostree to apply kernel arguments. 
+
+In a terminal, run: ```rpm-ostree kargs --append-if-missing=pcie_ports=native --append-if-missing=intel_iommu=on --append-if-missing=iommu=pt --append-if-missing=mem_sleep_default=s2idle``` and reboot when prompted.
 
 ### Day 2-3 Post-Install Refinement for T2
 #### Allow internal keyboard during early boot (LUKS encryption unlock)
