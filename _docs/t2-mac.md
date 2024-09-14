@@ -6,6 +6,8 @@ permalink: t2-mac
 ---
 This is an addendum to the [Bluefin installation runbook](introduction.md) for T2 Macs, supporting the project's goal of sustainability by enabling Bluefin installation on the final generation of Intel Macs (2018-2020). Apple ends support for them after 2024.
 
+Note that these Macs are not officially supported by Bluefin, this is a community effort.
+
 Please read the original [Bluefin installation runbook](introduction.md) as the contents of it are not reproduced here. Section Headings match up where possible.
 
 ## Day 0 - Planning
